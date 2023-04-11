@@ -1,0 +1,1 @@
+ubuntu로 docker 사용하여 git에 올리기
