@@ -1,1 +1,43 @@
-ubuntu로 docker 사용하여 git에 올리기
+ubuntu로 docker 사용하여 git에 올리기# Docker Container LifeCycle
+
+Created: create
+Running: start | run | unpause
+Paused: puase
+Stopped: stop
+Deleted: rm
+
+docker --help
+docker ps
+docker ps -a
+docker inspect [container]
+
+#1-1. 컨테이너 시작
+$ docker create nginx
+#1-2. 컨테이너 생성 및 시작
+$ docker run nginx 
+#1-3. 컨테이너 시작
+$ docker statr [container]
+#1-4. 이미지 다운받기
+$ docker pull nginx:1.21
+password for [계정명]
+#1-5. 이미지 확인하기
+$ docker images
+
+#1-6. 컨테이너 상태 확인하기
+$ docker ps
+#1-7. 컨테이너 stopped
+$ docker stop [container]
+$ docker stop $(docker ps -a -q) # 모든 컨테이너 종료
+#1-8. 컨테이너 paused
+$ docker puase [container] # 컨테이너 일시중지
+$ docker unpause [container] # 컨테이너 재개
+#1-9. 컨테이너 kill
+$ docker kill [container]
+#1-10. 컨테이너 rm
+$ docker rm [container] # 실행중인 컨테이너 불가
+$ docker rm -f [container] # 컨테이너 강제 종료 후 삭제(SIGKILL 시그널 전달)
+$ docker run --rm ... # 컨테이너 실행 종료 후 자동 삭제
+#1-11. 중지된 모든 컨테이너 prune
+$ docker container prune
+Are you sure you want to continue? [y/N] 
+
